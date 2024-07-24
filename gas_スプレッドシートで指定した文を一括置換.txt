@@ -1,0 +1,22 @@
+function replaceStrings() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet1 = ss.getSheetByName('シート1');
+  var sheet2 = ss.getSheetByName('シート2');
+
+  var values1 = sheet1.getRange('A:B').getValues();
+  var range2 = sheet2.getDataRange();
+  var values2 = range2.getValues();
+
+  var replacedValues = values2.map(function(row) {
+    return row.map(function(cell) {
+      for (var i = 0; i < values1.length; i++) {
+        if (typeof cell === 'string' && cell.includes(values1[i][0])) {
+          return cell.replace(new RegExp(values1[i][0], 'g'), values1[i][1]);
+        }
+      }
+      return cell;
+    });
+  });
+
+  range2.setValues(replacedValues);
+}
