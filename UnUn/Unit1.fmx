@@ -1,0 +1,119 @@
+object frmUnko: TfrmUnko
+  Left = 0
+  Top = 0
+  Caption = 'Unko'
+  ClientHeight = 600
+  ClientWidth = 600
+  Position = ScreenCenter
+  Transparency = True
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object layoutScaleBase: TLayout
+    Align = Center
+    Size.Width = 1.000000000000000000
+    Size.Height = 1.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object layoutUnkoBase: TLayout
+      Align = Center
+      Size.Width = 128.000000000000000000
+      Size.Height = 128.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object textGlyph: TText
+        Align = Client
+        Size.Width = 128.000000000000000000
+        Size.Height = 78.000000000000000000
+        Size.PlatformDefault = False
+        Text = #55357#56489
+        TextSettings.Font.Size = 64.000000000000000000
+        object effectGlyphGrow: TGlowEffect
+          Softness = 0.800000011920929000
+          GlowColor = claGold
+          Opacity = 0.899999976158142100
+        end
+      end
+      object textUnko: TText
+        Align = Bottom
+        Position.Y = 78.000000000000000000
+        Size.Width = 128.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Hello'
+        TextSettings.Font.Size = 48.000000000000000000
+        object effectUnkoFill: TFillRGBEffect
+          Color = xFF203040
+          object animUnkoColor: TColorKeyAnimation
+            Enabled = True
+            Duration = 5.000000000000000000
+            Keys = <
+              item
+                Value = xFFE60012
+              end
+              item
+                Key = 0.143000006675720200
+                Value = xFFF39800
+              end
+              item
+                Key = 0.284999996423721300
+                Value = xFFFFF100
+              end
+              item
+                Key = 0.428999990224838300
+                Value = xFF009944
+              end
+              item
+                Key = 0.570999979972839400
+                Value = xFF0068B7
+              end
+              item
+                Key = 0.713999986648559600
+                Value = xFF5D5099
+              end
+              item
+                Key = 0.856999993324279800
+                Value = xFFA55B9A
+              end
+              item
+                Key = 1.000000000000000000
+                Value = xFFE60012
+              end>
+            Loop = True
+            PropertyName = 'Color'
+            StartFromCurrent = False
+          end
+        end
+      end
+      object aminRotation: TFloatAnimation
+        Enabled = True
+        Duration = 1.000000000000000000
+        Loop = True
+        PropertyName = 'RotationAngle'
+        StartValue = 0.000000000000000000
+        StopValue = 360.000000000000000000
+      end
+    end
+    object animScaleX: TFloatAnimation
+      AutoReverse = True
+      Enabled = True
+      Duration = 1.000000000000000000
+      Interpolation = Bounce
+      Loop = True
+      PropertyName = 'Scale.X'
+      StartValue = 1.000000000000000000
+      StopValue = 4.000000000000000000
+    end
+    object animScaleY: TFloatAnimation
+      AutoReverse = True
+      Enabled = True
+      Duration = 1.000000000000000000
+      Interpolation = Bounce
+      Loop = True
+      PropertyName = 'Scale.Y'
+      StartValue = 1.000000000000000000
+      StopValue = 4.000000000000000000
+    end
+  end
+end
